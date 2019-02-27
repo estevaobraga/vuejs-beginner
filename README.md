@@ -1,34 +1,23 @@
-# vuejs-beginner
+## Instalando bibliotecas utilizadas
 
-## Project setup
-```
-npm install
-```
+´npm install --save bootstrap-vue´
+´npm install --save axios´
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- Configurando
+No arquivo _../srv/main.js_ importar _bootstrap-vue_ e _axios_
 
-### Compiles and minifies for production
-```
-npm run build
-```
+´´
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+´´
 
-### Run your tests
-```
-npm run test
-```
+´´
+Vue.prototype.$axios = axios
+Vue.use(BootstrapVue)
+´´
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Usando BootStrap-Vue
+´<b-input/>´
+´<b-button>´
+[Veja mais](https://br.vuejs.org/v2/guide/)
