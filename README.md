@@ -48,11 +48,24 @@ Vue.prototype.$axios = axios
 Vue.use(BootstrapVue)
 ```
 
-- Usando BootStrap-Vue
-`<b-input/>`
-`<b-button>`
-`<b-form>`
-Entre outros, [Veja mais.](https://br.vuejs.org/v2/guide/)
+- Usando BootStrap-Vue  
+Sobre espaçamento, [veja mais.](https://bootstrap-vue.js.org/docs/reference/spacing-classes/)  
+Sobre components, [veja mais.](https://br.vuejs.org/v2/guide/)  
 
+## Authenticando com Google - hello.js
 
+- Instalação da biblioteca hello.js
+`npm install hellojs`  
 
+- Configurando para uso
+
+main.js  
+`import Vue from 'vue'`  
+
+```
+HelloJs.init({}, {
+  redirect_uri: 'localhost/about'
+})
+```
+
+`Vue.use(HelloJs)`
