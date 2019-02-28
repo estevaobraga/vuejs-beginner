@@ -7,15 +7,12 @@ npm install
 npm run serve
 ```
 
-## Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 ## Instalando o Vuejs
-`npm install -g @vue/cli`
+`npm install -g @vue/cli`  
    _Requer [node e npm](https://nodejs.org/en/) instalado_
 
 ## Criando um projeto Vue
-`vue create <nome_projeto>`
+`vue create <nome_projeto>`  
 
 ```
 Vue CLI v3.4.1
@@ -28,4 +25,34 @@ Vue CLI v3.4.1
 ? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? In package.json
 ? Save this as a preset for future projects? No
 ```
+
+## Visual Studio Code - Extensões
+- Vetur
+
+## Instalando bibliotecas utilizadas
+
+`npm install --save bootstrap-vue`  
+`npm install --save axios`  
+
+- Configurando
+No arquivo _../srv/main.js_ importar _bootstrap-vue_ e _axios_
+
+```
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+```
+
+```
+Vue.prototype.$axios = axios
+Vue.use(BootstrapVue)
+```
+
+- Usando BootStrap-Vue
+`<b-input/>`
+`<b-button>`
+`<b-form>`
+Entre outros, [Veja mais.](https://br.vuejs.org/v2/guide/)
+
+
 
