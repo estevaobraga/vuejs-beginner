@@ -14,6 +14,7 @@ npm run serve
 ## Criando um projeto Vue
 `vue create <nome_projeto>`  
 
+Configuracões usadas
 ```
 Vue CLI v3.4.1
 ? Please pick a preset: Manually select features
@@ -48,10 +49,10 @@ Vue.prototype.$axios = axios
 Vue.use(BootstrapVue)
 ```
 
-- Usando BootStrap-Vue
-`<b-input/>`
-`<b-button>`
-`<b-form>`
+- Usando BootStrap-Vue  
+`<b-input/>`  
+`<b-button>`  
+`<b-form>`  
 Entre outros, [Veja mais.](https://br.vuejs.org/v2/guide/)
 
 
