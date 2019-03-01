@@ -13,8 +13,17 @@
                                     <b-input type="text" placeholder="Senha"/>
                                 </b-form-group>
                                 <b-button block variant="outline-success">Login</b-button>
-                                <b-link @click="auth('google')"><b-img src="../statics/btn-login-google.png"/></b-link>
-                                <b-link>Esqueceu a conta?</b-link>
+                                <b-link @click="auth('google')">
+                                  <b-img-lazy src="@/statics/btn-login-google.png" style="width: 35px; height: 35px"/>
+                                </b-link>
+                                <b-link @click="auth('facebook')">
+                                  <b-img-lazy src="@/statics/btn-login-facebook.png" style="width: 35px; height: 35px"/>
+                                </b-link>
+                                <b-link @click="auth('twitter')">
+                                  <b-img-lazy src="@/statics/btn-login-twitter.png" style="width: 35px; height: 35px"/>
+                                </b-link>
+                                <br/>
+                                <b-link mt-1>Esqueceu a conta?</b-link>
                             </div>
                         </b-card>
                     </b-col>
@@ -25,22 +34,34 @@
 </template>
 
 <script>
+import HelloJs from 'hellojs'
 export default {
+  data () {
+    return {
+      $HelloJs: ''
+    }
+  },
+  mounted () {
+    this.$HelloJs = HelloJs.init({
+      google: '252314890353-tmjn9he8q5p8dijsok34jfhs2oal1jgv.apps.googleusercontent.com'
+    })
+  },
   methods: {
     auth (network) {
-      let self = this
-      this.$HelloJs(network).login().then((res) => {
-        const authRes = this.$HelloJs(network).getAuthResponse()
-        console.log('auth', authRes)
-        localStorage.setItem('INTERACT_AUTH', JSON.stringify(authRes))
-        this.$HelloJs(network).api('me')
-          .then((res) => {
-            self.user = res
-            localStorage.setItem('INTERACT_USER', JSON.stringify(res))
-            this.rotaDashboard()
-            console.log('user', self.user)
-          })
-      })
+      // let self = this
+      this.$HelloJs(network).login()
+        .then((res) => {
+          const authRes = this.$HelloJs(network).getAuthResponse()
+          console.log('auth', authRes)
+          localStorage.setItem('INTERACT_AUTH', JSON.stringify(authRes))
+          this.$HelloJs(network).api('me')
+            .then((res) => {
+              self.user = res
+              localStorage.setItem('INTERACT_USER', JSON.stringify(res))
+              this.rotaDashboard()
+              console.log('user', self.user)
+            })
+        })
     },
     rotaDashboard () {
       setTimeout(() => {
